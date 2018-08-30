@@ -1,0 +1,151 @@
+ 'SECURITYCODE': '603939.SH'
+ 'REPORTTYPE': '1'
+ 'TYPE': '1'
+ 'REPORTDATE': '2018/3/31 0:00:00'
+ 
+ =============东财上的经营活动产生的现金流量框架 ===========
+ 'SALEGOODSSERVICEREC': '1767499186.82'                                     销售商品、提供劳务收到的现金                                        
+ 'NIDEPOSIT': ''                                                            客户存款和同业存放款项净增加额                                       
+ 'NIBORROWFROMCBANK': ''                                                    向中央银行借款净增加额                                           
+ 'NIBORROWFROMFI': ''                                                       向其他金融机构拆入资金净增加额                                       
+ 'PREMIUMREC': ''                                                           收到原保险合同保费取得的现金                                        
+ 'NETRIREC': ''                                                             收到再保险业务现金净额                                           
+ 'NIINSUREDDEPOSITINV': ''                                                  保户储金及投资款净增加额                                          
+ 'NIDISPTRADEFASSET': ''                                                    处置交易性金融资产净增加额                                         
+ 'INTANDCOMMREC': ''                                                        收取利息、手续费及佣金的现金<                                       
+ 'NIBORROWFUND': ''                                                         拆入资金净增加额                                              
+ 'NDLOANADVANCES': ''                                                       发放贷款及垫款的净减少额                                          
+ 'NIBUYBACKFUND': ''                                                        回购业务资金净增加额                                            
+ 'TAXRETURNREC': ''                                                         收到的税费返还                                               
+ 'OTHEROPERATEREC': '26020386.23'                                           收到其他与经营活动有关的现金   
+                                     
+ 'SUMOPERATEFLOWIN': '1793519573.05'                               经营活动现金流入小计             
+                                 
+ 'BUYGOODSSERVICEPAY': '1136465630.08'                                      购买商品、接受劳务支付的现金                                        
+ 'NILOANADVANCES': ''                                                       客户贷款及垫款净增加额                                           
+ 'NIDEPOSITINCBANKFI': ''                                                   存放中央银行和同业款项净增加额                                       
+ 'INDEMNITYPAY': ''                                                         支付原保险合同赔付款项的现金                                        
+ 'INTANDCOMMPAY': ''                                                        支付利息、手续费及佣金的现金                                        
+ 'DIVIPAY': ''                                                              支付保单红利的现金                                             
+ 'EMPLOYEEPAY': '241069067.24'                                              支付给职工以及为职工支付的现金                                       
+ 'TAXPAY': '111325942.7'                                                    支付的各项税费                                               
+ 'OTHEROPERATEPAY': '198330769.34'                                          支付其他与经营活动有关的现金  
+                                       
+ 'SUMOPERATEFLOWOUT': '1687191409.36'                             经营活动现金流出小计         
+                                    
+ 'NETOPERATECASHFLOW': '106328163.69'                             经营活动产生的现金流量净额     
+ 
+                                     
+ ==================东财上的投资活动产生的现金流量框架================                                                                                                           
+ 'DISPOSALINVREC': ''                                                       收回投资收到的现金                                             
+ 'INVINCOMEREC': ''                                                         取得投资收益收到的现金                                           
+ 'DISPFILASSETREC': ''                                                      处置固定资产、无形资产和其他长期资产收回的现金净额                             
+ 'DISPSUBSIDIARYREC': ''                                                    处置子公司及其他营业单位收到的现金净额                                   
+ 'REDUCEPLEDGETDEPOSIT': ''                                                 减少质押和定期存款所收到的现金                                       
+ 'OTHERINVREC': '1495068149.88'                                             收到其他与投资活动有关的现金  
+                                       
+ 'SUMINVFLOWIN': '1495068149.88'                                投资活动现金流入小计                 
+                            
+ 'BUYFILASSETPAY': '41926722.24'                                            购建固定资产、无形资产和其他长期资产支付的现金                               
+ 'INVPAY': ''                                                               投资支付的现金                                               
+ 'NIPLEDGELOAN': ''                                                         质押贷款净增加额                                              
+ 'GETSUBSIDIARYPAY': '68006723.38'                                          取得子公司及其他营业单位支付的现金净额                                   
+ 'ADDPLEDGETDEPOSIT': ''                                                    增加质押和定期存款所支付的现金                                       
+ 'OTHERINVPAY': '1156620000'                                                支付其他与投资活动有关的现金
+                                        
+ 'SUMINVFLOWOUT': '1266553445.62'                               投资活动现金流出小计        
+                                     
+ 'NETINVCASHFLOW': '228514704.26'                               投资活动产生的现金流量净额 
+                                         
+ =================东财上的筹资活动产生的现金流量框架===============                                                                                                           
+ 'ACCEPTINVREC': ''                                                         吸收投资收到的现金                                             
+ 'SUBSIDIARYACCEPT': ''                                                     子公司吸收少数股东投资收到的现金                                      
+ 'LOANREC': ''                                                              取得借款收到的现金                                             
+ 'ISSUEBONDREC': ''                                                         发行债券收到的现金                                             
+ 'OTHERFINAREC': ''                                                         收到其他与筹资活动有关的现金  
+                                       
+ 'SUMFINAFLOWIN': ''                                            筹资活动现金流入小计           
+                                  
+ 'REPAYDEBTPAY': '19000000'                                                 偿还债务支付的现金                                             
+ 'DIVIPROFITORINTPAY': ''                                                   分配股利、利润或偿付利息支付的现金                                     
+ 'SUBSIDIARYPAY': ''                                                        子公司支付给少数股东的股利、利润                                      
+ 'BUYSUBSIDIARYPAY': ''                                                     购买子公司少数股权而支付的现金                                       
+ 'OTHERFINAPAY': ''                                                         支付其他与筹资活动有关的现金                                        
+ 'SUBSIDIARYREDUCTCAPITAL': ''                                              子公司减资支付给少数股东的现金  
+                                      
+ 'SUMFINAFLOWOUT': '19000000'                                   筹资活动现金流出小计
+                                             
+ 'NETFINACASHFLOW': '-19000000'                                 筹资活动产生的现金流量净额   
+                                       
+ 'EFFECTEXCHANGERATE': ''                                                   汇率变动对现金及现金等价物的影响 
+                                      
+ 'NICASHEQUI': '315842867.95'                                   现金及现金等价物净增加额 
+                                          
+ 'CASHEQUIBEGINNING': '234159841.06'                                        加:期初现金及现金等价物余额 
+                                        
+ 'CASHEQUIENDING': '550002709.01'                               期末现金及现金等价物余额 
+ 
+    
+ 
+ =====================================以下为同比数据==============================  
+                                     
+ 'SALEGOODSSERVICEREC_YOY': '45.1841935960568'                    销售商品、提供劳务收到的现金                                      
+ 'NIDEPOSIT_YOY': ''                                              客户存款和同业存放款项净增加额                                     
+ 'NIBORROWFROMCBANK_YOY': ''                                      向中央银行借款净增加额                                         
+ 'NIBORROWFROMFI_YOY': ''                                         向其他金融机构拆入资金净增加额                                     
+ 'PREMIUMREC_YOY': ''                                             收到原保险合同保费取得的现金                                      
+ 'NETRIREC_YOY': ''                                               收到再保险业务现金净额                                         
+ 'NIINSUREDDEPOSITINV_YOY': ''                                    保户储金及投资款净增加额                                        
+ 'NIDISPTRADEFASSET_YOY': ''                                      处置交易性金融资产净增加额                                       
+ 'INTANDCOMMREC_YOY': ''                                          收取利息、手续费及佣金的现金<                                     
+ 'NIBORROWFUND_YOY': ''                                           拆入资金净增加额                                            
+ 'NDLOANADVANCES_YOY': ''                                         发放贷款及垫款的净减少额                                        
+ 'NIBUYBACKFUND_YOY': ''                                          回购业务资金净增加额                                          
+ 'TAXRETURNREC_YOY': ''                                           收到的税费返还                                             
+ 'OTHEROPERATEREC_YOY': '1449.16580564809'                        收到其他与经营活动有关的现金                                      
+ 'SUMOPERATEFLOWIN_YOY': '47.1185593691031'                       经营活动现金流入小计                                          
+ 'BUYGOODSSERVICEPAY_YOY': '57.5731381897918'                     购买商品、接受劳务支付的现金                                      
+ 'NILOANADVANCES_YOY': ''                                         客户贷款及垫款净增加额                                         
+ 'NIDEPOSITINCBANKFI_YOY': ''                                     存放中央银行和同业款项净增加额                                     
+ 'INDEMNITYPAY_YOY': ''                                           支付原保险合同赔付款项的现金                                      
+ 'INTANDCOMMPAY_YOY': ''                                          支付利息、手续费及佣金的现金                                      
+ 'DIVIPAY_YOY': ''                                                支付保单红利的现金                                           
+ 'EMPLOYEEPAY_YOY': '16.9802443163988'                            支付给职工以及为职工支付的现金                                     
+ 'TAXPAY_YOY': '31.3923540118364'                                 支付的各项税费                                             
+ 'OTHEROPERATEPAY_YOY': '54.0901575450607'                        支付其他与经营活动有关的现金                                      
+ 'SUMOPERATEFLOWOUT_YOY': '47.9024575554041'                      经营活动现金流出小计                                          
+ 'NETOPERATECASHFLOW_YOY': '35.7056046164421'                     经营活动产生的现金流量净额                                       
+ 'DISPOSALINVREC_YOY': ''                                         收回投资收到的现金                                           
+ 'INVINCOMEREC_YOY': ''                                           取得投资收益收到的现金                                         
+ 'DISPFILASSETREC_YOY': ''                                        处置固定资产、无形资产和其他长期资产收回的现金净额                           
+ 'DISPSUBSIDIARYREC_YOY': ''                                      处置子公司及其他营业单位收到的现金净额                                 
+ 'REDUCEPLEDGETDEPOSIT_YOY': ''                                   减少质押和定期存款所收到的现金                                     
+ 'OTHERINVREC_YOY': '39.4558164336155'                            收到其他与投资活动有关的现金                                      
+ 'SUMINVFLOWIN_YOY': '39.4558164336155'                           投资活动现金流入小计                                          
+ 'BUYFILASSETPAY_YOY': '48.0241443069197'                         购建固定资产、无形资产和其他长期资产支付的现金                             
+ 'INVPAY_YOY': ''                                                 投资支付的现金                                             
+ 'NIPLEDGELOAN_YOY': ''                                           质押贷款净增加额                                            
+ 'GETSUBSIDIARYPAY_YOY': '155.664373609023'                       取得子公司及其他营业单位支付的现金净额                                 
+ 'ADDPLEDGETDEPOSIT_YOY': ''                                      增加质押和定期存款所支付的现金                                     
+ 'OTHERINVPAY_YOY': '10.8801217637515'                            支付其他与投资活动有关的现金                                      
+ 'SUMINVFLOWOUT_YOY': '15.3456141544296'                          投资活动现金流出小计                                          
+ 'NETINVCASHFLOW_YOY': '979.653480758318'                         投资活动产生的现金流量净额                                       
+ 'ACCEPTINVREC_YOY': ''                                           吸收投资收到的现金                                           
+ 'SUBSIDIARYACCEPT_YOY': ''                                       子公司吸收少数股东投资收到的现金                                    
+ 'LOANREC_YOY': ''                                                取得借款收到的现金                                           
+ 'ISSUEBONDREC_YOY': ''                                           发行债券收到的现金                                           
+ 'OTHERFINAREC_YOY': ''                                           收到其他与筹资活动有关的现金                                      
+ 'SUMFINAFLOWIN_YOY': ''                                          筹资活动现金流入小计                                          
+ 'REPAYDEBTPAY_YOY': ''                                           偿还债务支付的现金                                           
+ 'DIVIPROFITORINTPAY_YOY': ''                                     分配股利、利润或偿付利息支付的现金                                   
+ 'SUBSIDIARYPAY_YOY': ''                                          子公司支付给少数股东的股利、利润                                    
+ 'BUYSUBSIDIARYPAY_YOY': ''                                       购买子公司少数股权而支付的现金                                     
+ 'OTHERFINAPAY_YOY': ''                                           支付其他与筹资活动有关的现金                                      
+ 'SUBSIDIARYREDUCTCAPITAL_YOY': ''                                子公司减资支付给少数股东的现金                                     
+ 'SUMFINAFLOWOUT_YOY': ''                                         筹资活动现金流出小计                                          
+ 'NETFINACASHFLOW_YOY': '-183.479789103691'                       筹资活动产生的现金流量净额                                       
+ 'EFFECTEXCHANGERATE_YOY': ''                                     汇率变动对现金及现金等价物的影响                                    
+ 'NICASHEQUI_YOY': '320.371244560147'                             现金及现金等价物净增加额                                        
+ 'CASHEQUIBEGINNING_YOY': '95.0156147882822'                      加:期初现金及现金等价物余额                                      
+ 'CASHEQUIENDING_YOY': '181.7541197526'                           期末现金及现金等价物余额                                        
+ 'CURRENCY': '人民币'

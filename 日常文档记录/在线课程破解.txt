@@ -1,0 +1,7 @@
+慕课学院 课程破解
+
+查看课程介绍的网页源代码，然后根据lessonid来获取具体课程的id，然后更改网页源码
+
+http://www.mooc.ai/course/161/lesson/1475/player
+
+其中161代表哪种课程的id，1475为章节的id。

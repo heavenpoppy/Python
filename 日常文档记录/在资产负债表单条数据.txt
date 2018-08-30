@@ -1,0 +1,245 @@
+'SECURITYCODE':'603939.S H',
+'REPORTTYPE':'1',
+'TYPE':'1',   
+'REPORTDATE':'2017/12/31 0:00:00',
+
+=======东财上面的流动资产框架=============
+
+'MONETARYFUND':'787536938.23',                     		货币资金
+'SETTLEMENTPROVISION':'',                          		结算备付金
+'LENDFUND':'',                                     		拆出资金
+'FVALUEFASSET':'',                                 		以公允价值计量且其变动计入当期损益的金融资产
+'TRADEFASSET':'',                                  		其中:交易性金融资产
+'DEFINEFVALUEFASSET':'',                           		其中:指定为以公允价值计量且其变动计入当期损益的金融资产
+'BILLREC':'1781652.75',                            		应收票据
+'ACCOUNTREC':'338598311.74',                       		应收账款
+'ADVANCEPAY':'211470255.2',                        		预付款项
+'PREMIUMREC':'',                                   		应收保费
+'RIREC':'',                                        		应收分保账款
+'RICONTACTRESERVEREC':'',                          		应收分保合同准备金
+'INTERESTREC':'15617859.34',                       		应收利息
+'DIVIDENDREC':'',                                  		应收股利
+'OTHERREC':'122237653.93',												 		其他应收款
+'EXPORTREBATEREC':'',                              		应收出口退税
+'SUBSIDYREC':'',                                   		应收补贴款
+'INTERNALREC':'',                                  		内部应收款
+'BUYSELLBACKFASSET':'',                            		买入返售金融资产
+'INVENTORY':'764160321.09',                        		存货
+'CLHELDSALEASS':'34842294.97',                     		划分为持有待售的资产
+'NONLASSETONEYEAR':'',                             		一年内到期的非流动资产
+'OTHERLASSET':'1080289764.09',                     		其他流动资产
+
+
+'SUMLASSET':'3356535051.34',                       流动资产合计
+
+======================东财上的非流动资产框架===================
+
+'LOANADVANCES':'',                                 		发放委托贷款及垫款 
+'SALEABLEFASSET':'61650000',                       		可供出售金融资产
+'HELDMATURITYINV':'',                              		持有至到期投资
+'LTREC':'',                                        		长期应收款
+'LTEQUITYINV':'',                                  		长期股权投资
+'ESTATEINVEST':'',                                 		投资性房地产
+'FIXEDASSET':'313828441.69',                       		固定资产
+'CONSTRUCTIONPROGRESS':'1376980.34',               		在建工程
+'CONSTRUCTIONMATERIAL':'',                         		工程物资
+'LIQUIDATEFIXEDASSET':'',                          		固定资产清理
+'PRODUCTBIOLOGYASSET':'',                          		生产性生物资产
+'OILGASASSET':'',                                  		油气资产
+'INTANGIBLEASSET':'151407615.1',                   		无形资产
+'DEVELOPEXP':'34422634.25',                        		开发支出
+'GOODWILL':'694129744.04',                         		商誉
+'LTDEFERASSET':'109084164.7',                      		长期待摊费用
+'DEFERINCOMETAXASSET':'4449742.34',                		递延所得税资产
+'OTHERNONLASSET':'55675134.79',                    		其他非流动资产
+
+
+'SUMNONLASSET':'1426024457.25',                    非流动资产合计
+'SUMASSET':'4782559508.59',                        资产总计
+
+===============东财上的流动负债框架============
+							
+'STBORROW':'',                                     		短期借款
+'BORROWFROMCBANK':'',                              		向中央银行借款
+'DEPOSIT':'0',                                     		吸收存款及同业存放
+'BORROWFUND':'',                                   		拆入资金
+'FVALUEFLIAB':'',                                  		以公允价值计量且其变动计入当期损益的金融负债
+'TRADEFLIAB':'',                                   		其中：交易性金融负债
+'DEFINEFVALUEFLIAB':'',                            		其中:指定以公允价值计量且其变动计入当期损益的金融负债
+'BILLPAY':'920222601.73',                          		应付票据
+'ACCOUNTPAY':'318683873.4',                        		应付账款
+'ADVANCERECEIVE':'11320577.75',                    		预收款项
+'SELLBUYBACKFASSET':'',                            		卖出回购金融资产款
+'COMMPAY':'',                                      		应付手续费及佣金
+'SALARYPAY':'105975161.12',                        		应付职工薪酬
+'TAXPAY':'57735119',                               		应交税费
+'INTERESTPAY':'',                                  		应付利息
+'DIVIDENDPAY':'54737760',                          		应付股利
+'RIPAY':'',                                        		应付分保账款
+'INTERNALPAY':'',                                  		内部应付款
+'OTHERPAY':'88495557.07',                          		其他应付款
+'ANTICIPATELLIAB':'',                              		预计流动负债
+'CONTACTRESERVE':'',                               		保险合同准备金
+'AGENTTRADESECURITY':'',                           		代理买卖证券款
+'AGENTUWSECURITY':'',                              		代理承销证券款
+'DEFERINCOMEONEYEAR':'',                           		一年内的递延收益
+'STBONDREC':'',                                    		应付短期债券
+'CLHELDSALELIAB':'385942.81',                      		划分为持有待售的负债
+'NONLLIABONEYEAR':'',                              		一年内到期的非流动负债
+'OTHERLLIAB':'',                                   		其他流动负债
+
+
+'SUMLLIAB':'1557556592.88',                        流动负债合计
+
+======================东财上的非流动负债框架========================
+
+'LTBORROW':'',                                     		长期借款
+'BONDPAY':'',                                      		应付债券
+'PREFERSTOCBOND':'',                               		其中:优先股
+'SUSTAINBOND':'',                                  		其中:永续债
+'LTACCOUNTPAY':'',                                 		长期应付款
+'LTSALARYPAY':'',                                  		长期应付职工薪酬
+'SPECIALPAY':'',                                   		专项应付款
+'ANTICIPATELIAB':'',                               		预计负债
+'DEFERINCOME':'45352699.06',                       		递延收益
+'DEFERINCOMETAXLIAB':'',                           		递延所得税负债
+'OTHERNONLLIAB':'',                                		其他非流动负债
+
+
+'SUMNONLLIAB':'45352699.06',                       非流动负债合计
+'SUMLIAB':'1602909291.94',                         负债合计 
+
+=========================东财上的所有者权益(或股东权益)框架===================
+
+'SHARECAPITAL':'362694658',                        		实收资本（或股本）
+'OTHEREQUITY':'',                                  		其他权益工具
+'PREFERREDSTOCK':'',                               		其中:优先股
+'SUSTAINABLEDEBT':'',                              		其中:永续债
+'OTHEREQUITYOTHER':'',                             		其中:其他权益工具
+'CAPITALRESERVE':'2007338506.08',                  		资本公积
+'INVENTORYSHARE':'',                               		库存股
+'SPECIALRESERVE':'',                               		专项储备
+'SURPLUSRESERVE':'51788269.84',                    		盈余公积
+'GENERALRISKPREPARE':'',                           		一般风险准备
+'UNCONFIRMINVLOSS':'',                             		未确定的投资损失
+'RETAINEDEARNING':'745381748.27',                  		未分配利润
+'PLANCASHDIVI':'',                                 		拟分配现金股利
+'DIFFCONVERSIONFC':'',                             		外币报表折算差额
+
+
+'SUMPARENTEQUITY':'3167203182.19',                 归属于母公司股东权益合计
+'MINORITYEQUITY':'12447034.46',                    		少数股东权益
+
+
+'SUMSHEQUITY':'3179650216.65',                     股东权益合计
+
+'SUMLIABSHEQUITY':'4782559508.59',                 负债和股东权益合计
+
+=====获取的以下字段为同比数据（%）==========
+
+'MONETARYFUND_YOY':'127.196603878087',             货币资金                                                  
+'SETTLEMENTPROVISION_YOY':'',                      结算备付金                                                 
+'LENDFUND_YOY':'',                                 拆出资金                                                  
+'FVALUEFASSET_YOY':'',                             以公允价值计量且其变动计入当期损益的金融资产                                
+'TRADEFASSET_YOY':'',                              其中:交易性金融资产                                            
+'DEFINEFVALUEFASSET_YOY':'',                       其中:指定为以公允价值计量且其变动计入当期损益的金融资产                          
+'BILLREC_YOY':'28.9696293333229',                  应收票据                                                  
+'ACCOUNTREC_YOY':'37.1602179064067',               应收账款                                                  
+'ADVANCEPAY_YOY':'115.725038336005',               预付款项                                                  
+'PREMIUMREC_YOY':'',                               应收保费                                                  
+'RIREC_YOY':'',                                    应收分保账款                                                
+'RICONTACTRESERVEREC_YOY':'',                      应收分保合同准备金                                             
+'INTERESTREC_YOY':'41.0818678361469',              应收利息                                                  
+'DIVIDENDREC_YOY':'',                              应收股利                                                  
+'OTHERREC_YOY':'45.4681294282225',                 其他应收款                                                 
+'EXPORTREBATEREC_YOY':'',                          应收出口退税                                                
+'SUBSIDYREC_YOY':'',                               应收补贴款                                                 
+'INTERNALREC_YOY':'',                              内部应收款                                                 
+'BUYSELLBACKFASSET_YOY':'',                        买入返售金融资产                                              
+'INVENTORY_YOY':'4.6708847015185',                 存货                                                    
+'CLHELDSALEASS_YOY':'',                            划分为持有待售的资产                                            
+'NONLASSETONEYEAR_YOY':'',                         一年内到期的非流动资产                                           
+'OTHERLASSET_YOY':'-32.8032775092787',             其他流动资产                                                
+'SUMLASSET_YOY':'7.38445005448381',                流动资产合计                                                
+'LOANADVANCES_YOY':'',                             发放委托贷款及垫款                                             
+'SALEABLEFASSET_YOY':'13600',                      可供出售金融资产                                              
+'HELDMATURITYINV_YOY':'',                          持有至到期投资                                               
+'LTREC_YOY':'',                                    长期应收款                                                 
+'LTEQUITYINV_YOY':'',                              长期股权投资                                                
+'ESTATEINVEST_YOY':'',                             投资性房地产                                                
+'FIXEDASSET_YOY':'9.02380657940457',               固定资产                                                  
+'CONSTRUCTIONPROGRESS_YOY':'-90.7583905416198',    在建工程                                                  
+'CONSTRUCTIONMATERIAL_YOY':'',                     工程物资                                                  
+'LIQUIDATEFIXEDASSET_YOY':'',                      固定资产清理                                                
+'PRODUCTBIOLOGYASSET_YOY':'',                      生产性生物资产                                               
+'OILGASASSET_YOY':'',                              油气资产                                                  
+'INTANGIBLEASSET_YOY':'0.845535013143097',         无形资产                                                  
+'DEVELOPEXP_YOY':'132.765113751294',               开发支出                                                  
+'GOODWILL_YOY':'31.1587477386197',                 商誉                                                    
+'LTDEFERASSET_YOY':'24.6715500947923',             长期待摊费用                                                
+'DEFERINCOMETAXASSET_YOY':'202.857397680458',      递延所得税资产                                               
+'OTHERNONLASSET_YOY':'504.938321491009',           其他非流动资产                                               
+'SUMNONLASSET_YOY':'30.1677454349234',             非流动资产合计                                               
+'SUMASSET_YOY':'13.297335221042',                  资产总计                                                  
+'STBORROW_YOY':'',                                 短期借款                                                  
+'BORROWFROMCBANK_YOY':'',                          向中央银行借款                                               
+'DEPOSIT_YOY':'',                                  吸收存款及同业存放                                             
+'BORROWFUND_YOY':'',                               拆入资金                                                  
+'FVALUEFLIAB_YOY':'',                              以公允价值计量且其变动计入当期损益的金融负债                                
+'TRADEFLIAB_YOY':'',                               其中：交易性金融负债                                            
+'DEFINEFVALUEFLIAB_YOY':'',                        其中:指定以公允价值计量且其变动计入当期损益的金融负债                           
+'BILLPAY_YOY':'23.5131807325781',                  应付票据                                                  
+'ACCOUNTPAY_YOY':'29.8112964954054',               应付账款                                                  
+'ADVANCERECEIVE_YOY':'-4.34212883018123',          预收款项                                                  
+'SELLBUYBACKFASSET_YOY':'',                        卖出回购金融资产款                                             
+'COMMPAY_YOY':'',                                  应付手续费及佣金                                              
+'SALARYPAY_YOY':'32.4872243692031',                应付职工薪酬                                                
+'TAXPAY_YOY':'20.373985688662',                    应交税费                                                  
+'INTERESTPAY_YOY':'',                              应付利息                                                  
+'DIVIDENDPAY_YOY':'',                              应付股利                                                  
+'RIPAY_YOY':'',                                    应付分保账款                                                
+'INTERNALPAY_YOY':'',                              内部应付款                                                 
+'OTHERPAY_YOY':'26.970860831863',                  其他应付款                                                 
+'ANTICIPATELLIAB_YOY':'',                          预计流动负债                                                
+'CONTACTRESERVE_YOY':'',                           保险合同准备金                                               
+'AGENTTRADESECURITY_YOY':'',                       代理买卖证券款                                               
+'AGENTUWSECURITY_YOY':'',                          代理承销证券款                                               
+'DEFERINCOMEONEYEAR_YOY':'',                       一年内的递延收益                                              
+'STBONDREC_YOY':'',                                应付短期债券                                                
+'CLHELDSALELIAB_YOY':'',                           划分为持有待售的负债                                            
+'NONLLIABONEYEAR_YOY':'',                          一年内到期的非流动负债                                           
+'OTHERLLIAB_YOY':'',                               其他流动负债                                                
+'SUMLLIAB_YOY':'29.7940182866954',                 流动负债合计                                                
+'LTBORROW_YOY':'',                                 长期借款                                                  
+'BONDPAY_YOY':'',                                  应付债券                                                  
+'PREFERSTOCBOND_YOY':'',                           其中:优先股                                                
+'SUSTAINBOND_YOY':'',                              其中:永续债                                                
+'LTACCOUNTPAY_YOY':'',                             长期应付款                                                 
+'LTSALARYPAY_YOY':'',                              长期应付职工薪酬                                              
+'SPECIALPAY_YOY':'',                               专项应付款                                                 
+'ANTICIPATELIAB_YOY':'',                           预计负债                                                  
+'DEFERINCOME_YOY':'-1.14045001082927',             递延收益                                                  
+'DEFERINCOMETAXLIAB_YOY':'',                       递延所得税负债                                               
+'OTHERNONLLIAB_YOY':'',                            其他非流动负债                                               
+'SUMNONLLIAB_YOY':'-1.14045001082927',             非流动负债合计                                               
+'SUMLIAB_YOY':'28.6549631081459',                  负债合计                                                  
+'SHARECAPITAL_YOY':'0',                            实收资本（或股本）                                             
+'OTHEREQUITY_YOY':'',                              其他权益工具                                                
+'PREFERREDSTOCK_YOY':'',                           其中:优先股                                                
+'SUSTAINABLEDEBT_YOY':'',                          其中:永续债                                                
+'OTHEREQUITYOTHER_YOY':'',                         其中:其他权益工具                                             
+'CAPITALRESERVE_YOY':'0',                          资本公积                                                  
+'INVENTORYSHARE_YOY':'',                           库存股                                                   
+'SPECIALRESERVE_YOY':'',                           专项储备                                                  
+'SURPLUSRESERVE_YOY':'53.9838610810443',           盈余公积                                                  
+'GENERALRISKPREPARE_YOY':'',                       一般风险准备                                                
+'UNCONFIRMINVLOSS_YOY':'',                         未确定的投资损失                                              
+'RETAINEDEARNING_YOY':'33.3795546482258',          未分配利润                                                 
+'PLANCASHDIVI_YOY':'',                             拟分配现金股利                                               
+'DIFFCONVERSIONFC_YOY':'',                         外币报表折算差额                                              
+'SUMPARENTEQUITY_YOY':'6.90952269798776',          归属于母公司股东权益合计                                          
+'MINORITYEQUITY_YOY':'-3.06407014062915',          少数股东权益                                                
+'SUMSHEQUITY_YOY':'6.86648045397803',              股东权益合计                                                
+'SUMLIABSHEQUITY_YOY':'13.297335221042',           负债和股东权益合计                                             
+'CURRENCY':'人民币'                                                                                      
+}

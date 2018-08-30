@@ -1,0 +1,531 @@
+存在问题：
+1、数据链接中的ctype\companyType 这个字段不同股票是在原网页中是不一样的，类似股票分类(证券好像是1，但这个值并非传入，是写死在网页中，类似这样
+<input id="hidctype" type="hidden" value="1" /> 但我这边把这个值都改成4，发现也能获取数据，挑着比较了部分数据，主表数据是一致的，其他表数据应该是一样，字段的顺序不一样差别好像，先都用4来统一获取。
+
+
+
+
+1、主要财务指标：
+
+http://emweb.securities.eastmoney.com/PC_HSF10/NewFinanceAnalysis/MainTargetAjax?ctype=4&type=0&code=sh603939
+
+ 其中type=0  按报告期  type=1  按年度： type=2: 按单季度 
+     code 为股票代码 
+ 
+ 
+ 表：   main_financial_indicator
+ 
+ Id									（索引，自增）
+ stockcode					股票代码
+ date               时间					
+ jbmgsy             基本每股收益(元)                      
+ kfmgsy             扣非每股收益(元)                      
+ xsmgsy             稀释每股收益(元)                      
+ mgjzc              每股净资产(元)	                     
+ mggjj              每股公积金(元)	                     
+ mgwfply            每股未分配利润(元)	                   
+ mgjyxjl            每股经营现金流(元)	                   
+ yyzsr              营业总收入(元)                       
+ mlr                毛利润(元)	                       
+ gsjlr              归属净利润(元)	                     
+ kfjlr              扣非净利润(元)	                     
+ yyzsrtbzz          营业总收入同比增长(%)	                 
+ gsjlrtbzz          归属净利润同比增长(%)	                 
+ kfjlrtbzz          扣非净利润同比增长(%)	                 
+ yyzsrgdhbzz        营业总收入滚动环比增长(%)	               
+ gsjlrgdhbzz        归属净利润滚动环比增长(%)	               
+ kfjlrgdhbzz        扣非净利润滚动环比增长(%)	               
+ jqjzcsyl           加权净资产收益率(%)	                   
+ tbjzcsyl           摊薄净资产收益率(%)	                   
+ tbzzcsyl           摊薄总资产收益率(%)	                   
+ mll                毛利率(%)	                       
+ jll                净利率(%)	                       
+ sjsl               实际税率(%)	                       
+ yskyysr            预收款/营业收入	                     
+ xsxjlyysr          销售现金流/营业收入	                   
+ jyxjlyysr          经营现金流/营业收入	                   
+ zzczzy             总资产周转率(次)	                     
+ yszkzzts           应收账款周转天数(天)                    
+ chzzts             存货周转天数(天)	                     
+ zcfzl              资产负债率(%)	                     
+ ldzczfz            流动负债/总负债(%)	                   
+ ldbl               流动比率	                         
+ sdbl               速动比率   
+ type               数据类型         type=0  按报告期  type=1  按年度： type=2: 按单季度
+ 
+ 
+ 2、财务负债表
+ 
+ http://emweb.securities.eastmoney.com/PC_HSF10/NewFinanceAnalysis/zcfzbAjax?companyType=4&reportDateType=0&reportType=1&endDate=&code=sh603939
+ 其中reportDateType=0  按报告期  reportDateType=1  按年度
+     code 为股票代码
+     endDate 为数据的起始时间
+ 
+ 表： zcfzb                                                                                                                                           
+  Id									     （索引，自增）                                                                                                                                            
+  STOCKCODE                 股票代码                                                                                                                                                                         
+  MONETARYFUND              货币资金                                                                                                                                                        									
+  SETTLEMENTPROVISION       结算备付金
+  LENDFUND                  拆出资金                                                                                                                                                               					
+  FVALUEFASSET              以公允价值计量且其变动计入当期损益的金融资产                                                                                                                                                       
+  TRADEFASSET               其中:交易性金融资产                                                                                                                                                                   
+  DEFINEFVALUEFASSET        其中:指定为以公允价值计量且其变动计入当期损益的金融资产                                                                                                                                                 
+  BILLREC                   应收票据                                                                                                                                                                         
+  ACCOUNTREC                应收账款                                                                                                                                                                         
+  ADVANCEPAY                预付款项                                                                                                                                                                         
+  PREMIUMREC                应收保费                                                                                                                                                                         
+  RIREC                     应收分保账款                                                                                                                                                                       
+  RICONTACTRESERVEREC       应收分保合同准备金                                                                                                                                                                    
+  INTERESTREC               应收利息                                                                                                                                                                         
+  DIVIDENDREC               应收股利                                                                                                                                                                         
+  OTHERREC                  其他应收款                                                                                                                                                                        
+  EXPORTREBATEREC           应收出口退税                                                                                                                                                                       
+  SUBSIDYREC                应收补贴款                                                                                                                                                                        
+  INTERNALREC               内部应收款                                                                                                                                                                        
+  BUYSELLBACKFASSET         买入返售金融资产                                                                                                                                                                     
+  INVENTORY                 存货                                                                                                                                                                           
+  CLHELDSALEASS             划分为持有待售的资产                                                                                                                                                                   
+  NONLASSETONEYEAR          一年内到期的非流动资产                                                                                                                                                                  
+  OTHERLASSET               其他流动资产                                                                                                                                                                       
+  SUMLASSET                 流动资产合计                                                                                                                                                                       
+  LOANADVANCES              发放委托贷款及垫款                                                                                                                                                                    
+  SALEABLEFASSET            可供出售金融资产                                                                                                                                                                     
+  HELDMATURITYINV           持有至到期投资                                                                                                                                                                      
+  LTREC                     长期应收款                                                                                                                                                                        
+  LTEQUITYINV               长期股权投资                                                                                                                                                                       
+  ESTATEINVEST              投资性房地产                                                                                                                                                                       
+  FIXEDASSET                固定资产                                                                                                                                                                         
+  CONSTRUCTIONPROGRESS      在建工程                                                                                                                                                                         
+  CONSTRUCTIONMATERIAL      工程物资                                                                                                                                                                         
+  LIQUIDATEFIXEDASSET       固定资产清理                                                                                                                                                                       
+  PRODUCTBIOLOGYASSET       生产性生物资产                                                                                                                                                                      
+  OILGASASSET               油气资产                                                                                                                                                                         
+  INTANGIBLEASSET           无形资产                                                                                                                                                                         
+  DEVELOPEXP                开发支出                                                                                                                                                                         
+  GOODWILL                  商誉                                                                                                                                                                           
+  LTDEFERASSET              长期待摊费用                                                                                                                                                                       
+  DEFERINCOMETAXASSET       递延所得税资产                                                                                                                                                                      
+  OTHERNONLASSET            其他非流动资产                                                                                                                                                                      
+  SUMNONLASSET              非流动资产合计                                                                                                                                                                      
+  SUMASSET                  资产总计                                                                                                                                                                         
+  STBORROW                  短期借款                                                                                                                                                                         
+  BORROWFROMCBANK           向中央银行借款                                                                                                                                                                      
+  DEPOSIT                   吸收存款及同业存放                                                                                                                                                                    
+  BORROWFUND                拆入资金                                                                                                                                                                         
+  FVALUEFLIAB               以公允价值计量且其变动计入当期损益的金融负债                                                                                                                                                       
+  TRADEFLIAB                其中：交易性金融负债                                                                                                                                                                   
+  DEFINEFVALUEFLIAB         其中:指定以公允价值计量且其变动计入当期损益的金融负债                                                                                                                                                  
+  BILLPAY                   应付票据                                                                                                                                                                         
+  ACCOUNTPAY                应付账款                                                                                                                                                                         
+  ADVANCERECEIVE            预收款项                                                                                                                                                                         
+  SELLBUYBACKFASSET         卖出回购金融资产款                                                                                                                                                                    
+  COMMPAY                   应付手续费及佣金                                                                                                                                                                     
+  SALARYPAY                 应付职工薪酬                                                                                                                                                                       
+  TAXPAY                    应交税费                                                                                                                                                                         
+  INTERESTPAY               应付利息                                                                                                                                                                         
+  DIVIDENDPAY               应付股利                                                                                                                                                                         
+  RIPAY                     应付分保账款                                                                                                                                                                       
+  INTERNALPAY               内部应付款                                                                                                                                                                        
+  OTHERPAY                  其他应付款                                                                                                                                                                     
+  ANTICIPATELLIAB           预计流动负债                                                                                                                                                                       
+  CONTACTRESERVE            保险合同准备金                                                                                                                                                                      
+  AGENTTRADESECURITY        代理买卖证券款                                                                                                                                                                      
+  AGENTUWSECURITY           代理承销证券款                                                                                                                                                                      
+  DEFERINCOMEONEYEAR        一年内的递延收益                                                                                                                                                                     
+  STBONDREC                 应付短期债券                                                                                                                                                                       
+  CLHELDSALELIAB            划分为持有待售的负债                                                                                                                                                                   
+  NONLLIABONEYEAR           一年内到期的非流动负债                                                                                                                                                                  
+  OTHERLLIAB                其他流动负债                                                                                                                                                                       
+  SUMLLIAB                  流动负债合计                                                                                                                                                                       
+  LTBORROW                  长期借款                                                                                                                                                                         
+  BONDPAY                   应付债券                                                                                                                                                                         
+  PREFERSTOCBOND            其中:优先股                                                                                                                                                                       
+  SUSTAINBOND               其中:永续债                                                                                                                                                                       
+  LTACCOUNTPAY              长期应付款                                                                                                                                                                        
+  LTSALARYPAY               长期应付职工薪酬                                                                                                                                                                     
+  SPECIALPAY                专项应付款                                                                                                                                                                        
+  ANTICIPATELIAB            预计负债                                                                                                                                                                         
+  DEFERINCOME               递延收益                                                                                                                                                                         
+  DEFERINCOMETAXLIAB        递延所得税负债                                                                                                                                                                      
+  OTHERNONLLIAB             其他非流动负债                                                                                                                                                                      
+  SUMNONLLIAB               非流动负债合计                                                                                                                                                                      
+  SUMLIAB                   负债合计                                                                                                                                                                         
+  SHARECAPITAL              实收资本（或股本）                                                                                                                                                                    
+  OTHEREQUITY               其他权益工具                                                                                                                                                                       
+  PREFERREDSTOCK            其中:优先股                                                                                                                                                                       
+  SUSTAINABLEDEBT           其中:永续债                                                                                                                                                                       
+  OTHEREQUITYOTHER          其中:其他权益工具                                                                                                                                                                    
+  CAPITALRESERVE            资本公积                                                                                                                                                                         
+  INVENTORYSHARE            库存股                                                                                                                                                                          
+  SPECIALRESERVE            专项储备                                                                                                                                                                         
+  SURPLUSRESERVE            盈余公积                                                                                                                                                                         
+  GENERALRISKPREPARE        一般风险准备                                                                                                                                                                       
+  UNCONFIRMINVLOSS          未确定的投资损失                                                                                                                                                                     
+  RETAINEDEARNING           未分配利润                                                                                                                                                                        
+  PLANCASHDIVI              拟分配现金股利                                                                                                                                                                      
+  DIFFCONVERSIONFC          外币报表折算差额                                                                                                                                                                     
+  SUMPARENTEQUITY           归属于母公司股东权益合计                                                                                                                                                                 
+  MINORITYEQUITY            少数股东权益                                                                                                                                                                       
+  SUMSHEQUITY               股东权益合计                                                                                                                                                                       
+  SUMLIABSHEQUITY           负债和股东权益合计                                                                                                                                                                    
+  MONETARYFUND_YOY          货币资金(同比)                                                                                                                                                                     
+  SETTLEMENTPROVISION_YOY_YO拆出资金(同比)                                                                                                                                     Y                               
+  FVALUEFASSET_YOY_YOY      以公允价值计量且其变动计入当期损益的金融资产(同比)                                                                                                                                                   
+  TRADEFASSET_YOY           其中:交易性金融资产(同比)                                                                                                                                                               
+  DEFINEFVALUEFASSET_YOY    其中:指定为以公允价值计量且其变动计入当期损益的金融资产(同比)                                                                                                                                             
+  BILLREC_YOY               应收票据(同比)                                                                                                                                                                     
+  ACCOUNTREC_YOY            应收账款(同比)                                                                                                                                                                     
+  ADVANCEPAY_YOY            预付款项(同比)                                                                                                                                                                     
+  PREMIUMREC_YOY            应收保费(同比)                                                                                                                                                                     
+  RIREC_YOY                 应收分保账款(同比)                                                                                                                                                                   
+  RICONTACTRESERVEREC_YOY   应收分保合同准备金(同比)                                                                                                                                                                
+  INTERESTREC_YOY           应收利息(同比)                                                                                                                                                                     
+  DIVIDENDREC_YOY           应收股利(同比)                                                                                                                                                                     
+  OTHERREC_YOY              其他应收款(同比)                                                                                                                                                                    
+  EXPORTREBATEREC_YOY       应收出口退税(同比)                                                                                                                                                                   
+  SUBSIDYREC_YOY            应收补贴款(同比)                                                                                                                                                                    
+  INTERNALREC_YOY           内部应收款(同比)                                                                                                                                                                    
+  BUYSELLBACKFASSET_YOY     买入返售金融资产(同比)                                                                                                                                                                 
+  INVENTORY_YOY             存货(同比)                                                                                                                                                                       
+  CLHELDSALEASS_YOY         划分为持有待售的资产(同比)                                                                                                                                                               
+  NONLASSETONEYEAR_YOY      一年内到期的非流动资产(同比)                                                                                                                                                              
+  OTHERLASSET_YOY           其他流动资产(同比)                                                                                                                                                                   
+  SUMLASSET_YOY             流动资产合计(同比)                                                                                                                                                                   
+  LOANADVANCES_YOY          发放委托贷款及垫款(同比)                                                                                                                                                                
+  SALEABLEFASSET_YOY        可供出售金融资产(同比)                                                                                                                                                                 
+  HELDMATURITYINV_YOY       持有至到期投资(同比)                                                                                                                                                                  
+  LTREC_YOY                 长期应收款(同比)                                                                                                                                                                    
+  LTEQUITYINV_YOY           长期股权投资(同比)                                                                                                                                                                   
+  ESTATEINVEST_YOY          投资性房地产(同比)                                                                                                                                                                   
+  FIXEDASSET_YOY            固定资产(同比)                                                                                                                                                                     
+  CONSTRUCTIONPROGRESS_YOY  在建工程(同比)                                                                                                                                                                     
+  CONSTRUCTIONMATERIAL_YOY  工程物资(同比)                                                                                                                                                                     
+  LIQUIDATEFIXEDASSET_YOY   固定资产清理(同比)                                                                                                                                                                   
+  PRODUCTBIOLOGYASSET_YOY   生产性生物资产(同比)                                                                                                                                                                  
+  OILGASASSET_YOY           油气资产(同比)                                                                                                                                                                     
+  INTANGIBLEASSET_YOY       无形资产(同比)                                                                                                                                                                     
+  DEVELOPEXP_YOY            开发支出(同比)                                                                                                                                                                     
+  GOODWILL_YOY              商誉(同比)                                                                                                                                                                       
+  LTDEFERASSET_YOY          长期待摊费用(同比)                                                                                                                                                                   
+  DEFERINCOMETAXASSET_YOY   递延所得税资产(同比)                                                                                                                                                                  
+  OTHERNONLASSET_YOY        其他非流动资产(同比)                                                                                                                                                                  
+  SUMNONLASSET_YOY          非流动资产合计(同比)                                                                                                                                                                  
+  SUMASSET_YOY              资产总计(同比)                                                                                                                                                                     
+  STBORROW_YOY              短期借款(同比)                                                                                                                                                                     
+  BORROWFROMCBANK_YOY       向中央银行借款(同比)                                                                                                                                                                  
+  DEPOSIT_YOY               吸收存款及同业存放(同比)                                                                                                                                                                
+  BORROWFUND_YOY            拆入资金(同比)                                                                                                                                                                     
+  FVALUEFLIAB_YOY           以公允价值计量且其变动计入当期损益的金融负债(同比)                                                                                                                                                   
+  TRADEFLIAB_YOY            其中：交易性金融负债(同比)                                                                                                                                                               
+  DEFINEFVALUEFLIAB_YOY     其中:指定以公允价值计量且其变动计入当期损益的金融负债(同比)                                                                                                                                              
+  BILLPAY_YOY               应付票据(同比)                                                                                                                                                                     
+  ACCOUNTPAY_YOY            应付账款(同比)                                                                                                                                                                     
+  ADVANCERECEIVE_YOY        预收款项(同比)                                                                                                                                                                     
+  SELLBUYBACKFASSET_YOY     卖出回购金融资产款(同比)                                                                                                                                                                
+  COMMPAY_YOY               应付手续费及佣金(同比)                                                                                                                                                                 
+  SALARYPAY_YOY             应付职工薪酬(同比)                                                                                                                                                                   
+  TAXPAY_YOY                应交税费(同比)                                                                                                                                                                     
+  INTERESTPAY_YOY           应付利息(同比)                                                                                                                                                                     
+  DIVIDENDPAY_YOY           应付股利(同比)                                                                                                                                                                     
+  RIPAY_YOY                 应付分保账款(同比)                                                                                                                                                                   
+  INTERNALPAY_YOY           内部应付款(同比)                                                                                                                                                                    
+  OTHERPAY_YOY              其他应付款(同比)                                                                                                                                                                 
+  ANTICIPATELLIAB_YOY       预计流动负债(同比)                                                                                                                                                                   
+  CONTACTRESERVE_YOY        保险合同准备金(同比)                                                                                                                                                                  
+  AGENTTRADESECURITY_YOY    代理买卖证券款(同比)                                                                                                                                                                  
+  AGENTUWSECURITY_YOY       代理承销证券款(同比)                                                                                                                                                                  
+  DEFERINCOMEONEYEAR_YOY    一年内的递延收益(同比)                                                                                                                                                                 
+  STBONDREC_YOY             应付短期债券(同比)                                                                                                                                                                   
+  CLHELDSALELIAB_YOY        划分为持有待售的负债(同比)                                                                                                                                                               
+  NONLLIABONEYEAR_YOY       一年内到期的非流动负债(同比)                                                                                                                                                              
+  OTHERLLIAB_YOY            其他流动负债(同比)                                                                                                                                                                   
+  SUMLLIAB_YOY              流动负债合计(同比)                                                                                                                                                                   
+  LTBORROW_YOY              长期借款(同比)                                                                                                                                                                     
+  BONDPAY_YOY               应付债券(同比)                                                                                                                                                                     
+  PREFERSTOCBOND_YOY        其中:优先股(同比)                                                                                                                                                                   
+  SUSTAINBOND_YOY           其中:永续债(同比)                                                                                                                                                                   
+  LTACCOUNTPAY_YOY          长期应付款(同比)                                                                                                                                                                    
+  LTSALARYPAY_YOY           长期应付职工薪酬(同比)                                                                                                                                                                 
+  SPECIALPAY_YOY            专项应付款(同比)                                                                                                                                                                    
+  ANTICIPATELIAB_YOY        预计负债(同比)                                                                                                                                                                     
+  DEFERINCOME_YOY           递延收益(同比)                                                                                                                                                                     
+  DEFERINCOMETAXLIAB_YOY    递延所得税负债(同比)                                                                                                                                                                  
+  OTHERNONLLIAB_YOY         其他非流动负债(同比)                                                                                                                                                                  
+  SUMNONLLIAB_YOY           非流动负债合计(同比)                                                                                                                                                                  
+  SUMLIAB_YOY               负债合计(同比)                                                                                                                                                                     
+  SHARECAPITAL_YOY          实收资本（或股本）(同比)                                                                                                                                                                
+  OTHEREQUITY_YOY           其他权益工具(同比)                                                                                                                                                                   
+  PREFERREDSTOCK_YOY        其中:优先股(同比)                                                                                                                                                                   
+  SUSTAINABLEDEBT_YOY       其中:永续债(同比)                                                                                                                                                                   
+  OTHEREQUITYOTHER_YOY      其中:其他权益工具(同比)                                                                                                                                                                
+  CAPITALRESERVE_YOY        资本公积(同比)                                                                                                                                                                     
+  INVENTORYSHARE_YOY        库存股(同比)                                                                                                                                                                      
+  SPECIALRESERVE_YOY        专项储备(同比)                                                                                                                                                                     
+  SURPLUSRESERVE_YOY        盈余公积(同比)                                                                                                                                                                     
+  GENERALRISKPREPARE_YOY    一般风险准备(同比)                                                                                                                                                                   
+  UNCONFIRMINVLOSS_YOY      未确定的投资损失(同比)                                                                                                                                                                 
+  RETAINEDEARNING_YOY       未分配利润(同比)                                                                                                                                                                    
+  PLANCASHDIVI_YOY          拟分配现金股利(同比)                                                                                                                                                                  
+  DIFFCONVERSIONFC_YOY      外币报表折算差额(同比)                                                                                                                                                                 
+  SUMPARENTEQUITY_YOY       归属于母公司股东权益合计(同比)                                                                                                                                                             
+  MINORITYEQUITY_YOY        少数股东权益(同比)                                                                                                                                                                   
+  SUMSHEQUITY_YOY           股东权益合计(同比)                                                                                                                                                                   
+  SUMLIABSHEQUITY_YOY       负债和股东权益合计(同比)
+  
+  DATATYPE									数据类型（0--按报告期；1--按年度;2--按单季度）
+  SECURITYCODE 
+  REPORTTYPE
+  TYPE
+  REPORTDATE                      报告时间
+  CURRENCY                                                                                                                                   TYPE                     
+  
+  
+3.利润表
+                                     
+  http://emweb.securities.eastmoney.com/PC_HSF10/NewFinanceAnalysis/lrbAjax?companyType=4&reportDateType=0&reportType=1&endDate=&code=sh603939
+
+ 其中reportType=0  按报告期  reportType=1  按年度   reportType=2 按季度
+     code 为股票代码
+     endDate 为数据的起始时间
+ 
+ 表： lrb                                                                                                                                           
+ Id									         （索引，自增）                                                                                                                                            
+ STOCKCODE                       股票代码 
+ TOTALOPERATEREVE                营业总收入
+ OPERATEREVE                     营业收入
+ INTREVE                         利息收入
+ PREMIUMEARNED                   已赚保费
+ COMMREVE                        手续费及佣金收入
+ OTHERREVE                       其他业务收入
+ TOTALOPERATEEXP                 营业总成本
+ OPERATEEXP                      营业成本
+ INTEXP                          利息支出
+ COMMEXP                         手续费及佣金支出
+ RDEXP                           研发费用
+ SURRENDERPREMIUM                退保金
+ NETINDEMNITYEXP                 赔付支出净额
+ NETCONTACTRESERVE               提取保险合同准备金净额
+ POLICYDIVIEXP                   保单红利支出
+ RIEXP                           分保费用
+ OTHEREXP                        其他业务成本
+ OPERATETAX                      营业税金及附加
+ SALEEXP                         销售费用
+ MANAGEEXP                       管理费用
+ FINANCEEXP                      财务费用
+ ASSETDEVALUELOSS                资产减值损失
+ FVALUEINCOME                    加:公允价值变动收益
+ INVESTINCOME                    加:投资收益
+ INVESTJOINTINCOME               其中:对联营企业和合营企业的投
+ EXCHANGEINCOME                  汇兑收益
+ OPERATEPROFIT                   营业利润
+ NONOPERATEREVE                  加:营业外收入
+ NONLASSETREVE                   其中:非流动资产处置利得
+ NONOPERATEEXP                   减:营业外支出
+ NONLASSETNETLOSS                其中:非流动资产处置净损失
+ SUMPROFIT                       利润总额
+ INCOMETAX                       减:所得税费用
+ NETPROFIT                       净利润
+ COMBINEDNETPROFITB              被合并方在合并前实现利润
+ PARENTNETPROFIT                 其中:归属于母公司股东的净利润
+ MINORITYINCOME                  少数股东损益
+ KCFJCXSYJLR                     扣除非经常性损益后的净利润
+ BASICEPS                        基本每股收益
+ DILUTEDEPS                      稀释每股收益
+ OTHERCINCOME                    其他综合收益
+ PARENTOTHERCINCOME              归属于母公司股东的其他综合收益
+ MINORITYOTHERCINCOME            归属于少数股东的其他综合收益
+ SUMCINCOME                      综合收益总额
+ PARENTCINCOME                   归属于母公司所有者的综合收益总
+ MINORITYCINCOME                 归属于少数股东的综合收益总额     
+ TOTALOPERATEREVE_YOY            营业总收入(同比)                        
+ OPERATEREVE_YOY                 营业收入(同比)                         
+ INTREVE_YOY                     利息收入(同比)                         
+ PREMIUMEARNED_YOY               已赚保费(同比)                         
+ COMMREVE_YOY                    手续费及佣金收入(同比)                     
+ OTHERREVE_YOY                   其他业务收入(同比)                       
+ TOTALOPERATEEXP_YOY             营业总成本(同比)                        
+ OPERATEEXP_YOY                  营业成本(同比)                         
+ INTEXP_YOY                      利息支出(同比)                         
+ COMMEXP_YOY                     手续费及佣金支出(同比)                     
+ RDEXP_YOY                       研发费用(同比)                         
+ SURRENDERPREMIUM_YOY            退保金(同比)                          
+ NETINDEMNITYEXP_YOY             赔付支出净额(同比)                       
+ NETCONTACTRESERVE_YOY           提取保险合同准备金净额(同比)                  
+ POLICYDIVIEXP_YOY               保单红利支出(同比)                       
+ RIEXP_YOY                       分保费用(同比)                         
+ OTHEREXP_YOY                    其他业务成本(同比)                       
+ OPERATETAX_YOY                  营业税金及附加(同比)                      
+ SALEEXP_YOY                     销售费用(同比)                         
+ MANAGEEXP_YOY                   管理费用(同比)                         
+ FINANCEEXP_YOY                  财务费用(同比)                         
+ ASSETDEVALUELOSS_YOY            资产减值损失(同比)                       
+ FVALUEINCOME_YOY                加:公允价值变动收益(同比)                   
+ INVESTINCOME_YOY                加:投资收益(同比)                       
+ INVESTJOINTINCOME_YOY           其中:对联营企业和合营企业的投(同比)              
+ EXCHANGEINCOME_YOY              汇兑收益(同比)                         
+ OPERATEPROFIT_YOY               营业利润(同比)                         
+ NONOPERATEREVE_YOY              加:营业外收入(同比)                      
+ NONLASSETREVE_YOY               其中:非流动资产处置利得(同比)                 
+ NONOPERATEEXP_YOY               减:营业外支出(同比)                      
+ NONLASSETNETLOSS_YOY            其中:非流动资产处置净损失(同比)                
+ SUMPROFIT_YOY                   利润总额(同比)                         
+ INCOMETAX_YOY                   减:所得税费用(同比)                      
+ NETPROFIT_YOY                   净利润(同比)                          
+ COMBINEDNETPROFITB_YOY          被合并方在合并前实现利润(同比)                 
+ PARENTNETPROFIT_YOY             其中:归属于母公司股东的净利润(同比)              
+ MINORITYINCOME_YOY              少数股东损益(同比)                       
+ KCFJCXSYJLR_YOY                 扣除非经常性损益后的净利润(同比)                
+ BASICEPS_YOY                    基本每股收益(同比)                       
+ DILUTEDEPS_YOY                  稀释每股收益(同比)                       
+ OTHERCINCOME_YOY                其他综合收益(同比)                       
+ PARENTOTHERCINCOME_YOY           归属于母公司股东的其他综合收益(同比)              
+ MINORITYOTHERCINCOME_YOY varchar(50) NOT NULL DEFAULT 0 COMMENT 归属于少数股东的其他综合收益(同比)               
+ SUMCINCOME_YOY                  综合收益总额(同比)                       
+ PARENTCINCOME_YOY               归属于母公司所有者的综合收益总(同比)              
+ MINORITYCINCOME_YOY             归属于少数股东的综合收益总额(同比) 
+  
+ DATATYPE									      数据类型（0--按报告期；1--按年度;2--按单季度）
+ SECURITYCODE 
+ REPORTTYPE
+ TYPE
+ REPORTDATE                      报告时间
+ CURRENCY                 
+ 
+4 .现金流量表
+                                     
+  http://emweb.securities.eastmoney.com/PC_HSF10/NewFinanceAnalysis/xjllbAjax?companyType=4&reportDateType=0&reportType=1&endDate=&code=sh603939
+
+ 其中reportType=0  按报告期  reportType=1  按年度   reportType=2 按季度
+     code 为股票代码
+     endDate 为数据的起始时间
+ 
+ 表： xjllb                                                                                                                                          
+ Id									         （索引，自增）                                                                                                                                            
+ STOCKCODE                       股票代码
+ TOTALOPERATEREVE                营业总收入                                                                                                                                                                TYPE                                   
+ SALEGOODSSERVICEREC             销售商品、提供劳务收到的现金                                       
+ NIDEPOSIT                       客户存款和同业存放款项净增加额                                      
+ NIBORROWFROMCBANK               向中央银行借款净增加额                                          
+ NIBORROWFROMFI                  向其他金融机构拆入资金净增加额                                      
+ PREMIUMREC                      收到原保险合同保费取得的现金                                       
+ NETRIREC                        收到再保险业务现金净额                                          
+ NIINSUREDDEPOSITINV             保户储金及投资款净增加额                                         
+ NIDISPTRADEFASSET               处置交易性金融资产净增加额                                        
+ INTANDCOMMREC                   收取利息、手续费及佣金的现金<                                      
+ NIBORROWFUND                    拆入资金净增加额                                             
+ NDLOANADVANCES                  发放贷款及垫款的净减少额                                         
+ NIBUYBACKFUND                   回购业务资金净增加额                                           
+ TAXRETURNREC                    收到的税费返还                                              
+ OTHEROPERATEREC                 收到其他与经营活动有关的现金                                       
+ SUMOPERATEFLOWIN                经营活动现金流入小计                                           
+ BUYGOODSSERVICEPAY              购买商品、接受劳务支付的现金                                       
+ NILOANADVANCES                  客户贷款及垫款净增加额                                          
+ NIDEPOSITINCBANKFI              存放中央银行和同业款项净增加额                                      
+ INDEMNITYPAY                    支付原保险合同赔付款项的现金                                       
+ INTANDCOMMPAY                   支付利息、手续费及佣金的现金                                       
+ DIVIPAY                         支付保单红利的现金                                            
+ EMPLOYEEPAY                     支付给职工以及为职工支付的现金                                      
+ TAXPAY                          支付的各项税费                                              
+ OTHEROPERATEPAY                 支付其他与经营活动有关的现金                                       
+ SUMOPERATEFLOWOUT               经营活动现金流出小计                                           
+ NETOPERATECASHFLOW              经营活动产生的现金流量净额                                        
+ DISPOSALINVREC                  收回投资收到的现金                                            
+ INVINCOMEREC                    取得投资收益收到的现金                                          
+ DISPFILASSETREC                 处置固定资产、无形资产和其他长期资产收回的现金净额                            
+ DISPSUBSIDIARYREC               处置子公司及其他营业单位收到的现金净额                                  
+ REDUCEPLEDGETDEPOSIT            减少质押和定期存款所收到的现金                                      
+ OTHERINVREC                     收到其他与投资活动有关的现金                                       
+ SUMINVFLOWIN                    投资活动现金流入小计                                           
+ BUYFILASSETPAY                  购建固定资产、无形资产和其他长期资产支付的现金                              
+ INVPAY                          投资支付的现金                                              
+ NIPLEDGELOAN                    质押贷款净增加额                                             
+ GETSUBSIDIARYPAY                取得子公司及其他营业单位支付的现金净额                                  
+ ADDPLEDGETDEPOSIT               增加质押和定期存款所支付的现金                                      
+ OTHERINVPAY                     支付其他与投资活动有关的现金                                       
+ SUMINVFLOWOUT                   投资活动现金流出小计                                           
+ NETINVCASHFLOW                  投资活动产生的现金流量净额                                        
+ ACCEPTINVREC                    吸收投资收到的现金                                            
+ SUBSIDIARYACCEPT                子公司吸收少数股东投资收到的现金                                     
+ LOANREC                         取得借款收到的现金                                            
+ ISSUEBONDREC                    发行债券收到的现金                                            
+ OTHERFINAREC                    收到其他与筹资活动有关的现金                                       
+ SUMFINAFLOWIN                   筹资活动现金流入小计                                           
+ REPAYDEBTPAY                    偿还债务支付的现金                                            
+ DIVIPROFITORINTPAY              分配股利、利润或偿付利息支付的现金                                    
+ SUBSIDIARYPAY                   子公司支付给少数股东的股利、利润                                     
+ BUYSUBSIDIARYPAY                购买子公司少数股权而支付的现金                                      
+ OTHERFINAPAY                    支付其他与筹资活动有关的现金                                       
+ SUBSIDIARYREDUCTCAPITAL         子公司减资支付给少数股东的现金                                      
+ SUMFINAFLOWOUT                  筹资活动现金流出小计                                           
+ NETFINACASHFLOW                 筹资活动产生的现金流量净额                                        
+ EFFECTEXCHANGERATE              汇率变动对现金及现金等价物的影响                                     
+ NICASHEQUI                      现金及现金等价物净增加额                                         
+ CASHEQUIBEGINNING               加:期初现金及现金等价物余额                                       
+ CASHEQUIENDING                  期末现金及现金等价物余额                                         
+ SALEGOODSSERVICEREC_YOY         销售商品、提供劳务收到的现金(同比)                                   
+ NIDEPOSIT_YOY                   客户存款和同业存放款项净增加额(同比)                                  
+ NIBORROWFROMCBANK_YOY           向中央银行借款净增加额(同比)                                      
+ NIBORROWFROMFI_YOY              向其他金融机构拆入资金净增加额(同比)                                  
+ PREMIUMREC_YOY                  收到原保险合同保费取得的现金(同比)                                   
+ NETRIREC_YOY                    收到再保险业务现金净额(同比)                                      
+ NIINSUREDDEPOSITINV_YOY         保户储金及投资款净增加额(同比)                                     
+ NIDISPTRADEFASSET_YOY           处置交易性金融资产净增加额(同比)                                    
+ INTANDCOMMREC_YOY               收取利息、手续费及佣金的现金(同比)                                   
+ NIBORROWFUND_YOY                拆入资金净增加额(同比)                                         
+ NDLOANADVANCES_YOY              发放贷款及垫款的净减少额(同比)                                     
+ NIBUYBACKFUND_YOY               回购业务资金净增加额(同比)                                       
+ TAXRETURNREC_YOY                收到的税费返还(同比)                                          
+ OTHEROPERATEREC_YOY             收到其他与经营活动有关的现金(同比)                                   
+ SUMOPERATEFLOWIN_YOY            经营活动现金流入小计(同比)                                       
+ BUYGOODSSERVICEPAY_YOY          购买商品、接受劳务支付的现金(同比)                                   
+ NILOANADVANCES_YOY              客户贷款及垫款净增加额(同比)                                      
+ NIDEPOSITINCBANKFI_YOY          存放中央银行和同业款项净增加额(同比)                                  
+ INDEMNITYPAY_YOY                支付原保险合同赔付款项的现金(同比)                                   
+ INTANDCOMMPAY_YOY               支付利息、手续费及佣金的现金(同比)                                   
+ DIVIPAY_YOY                     支付保单红利的现金(同比)                                        
+ EMPLOYEEPAY_YOY                 支付给职工以及为职工支付的现金(同比)                                  
+ TAXPAY_YOY                      支付的各项税费(同比)                                          
+ OTHEROPERATEPAY_YOY             支付其他与经营活动有关的现金(同比)                                   
+ SUMOPERATEFLOWOUT_YOY           经营活动现金流出小计(同比)                                       
+ NETOPERATECASHFLOW_YOY          经营活动产生的现金流量净额(同比)                                    
+ DISPOSALINVREC_YOY              收回投资收到的现金(同比)                                        
+ INVINCOMEREC_YOY                取得投资收益收到的现金(同比)                                      
+ DISPFILASSETREC_YOY             处置固定资产、无形资产和其他长期资产收回的现金净额(同比)                        
+ DISPSUBSIDIARYREC_YOY           处置子公司及其他营业单位收到的现金净额(同比)                              
+ REDUCEPLEDGETDEPOSIT_YOY        减少质押和定期存款所收到的现金(同比)                                  
+ OTHERINVREC_YOY                 收到其他与投资活动有关的现金(同比)                                   
+ SUMINVFLOWIN_YOY                投资活动现金流入小计(同比)                                       
+ BUYFILASSETPAY_YOY              购建固定资产、无形资产和其他长期资产支付的现金(同比)                          
+ INVPAY_YOY                      投资支付的现金(同比)                                          
+ NIPLEDGELOAN_YOY                质押贷款净增加额(同比)                                         
+ GETSUBSIDIARYPAY_YOY            取得子公司及其他营业单位支付的现金净额(同比)                              
+ ADDPLEDGETDEPOSIT_YOY           增加质押和定期存款所支付的现金(同比)                                  
+ OTHERINVPAY_YOY                 支付其他与投资活动有关的现金(同比)                                   
+ SUMINVFLOWOUT_YOY               投资活动现金流出小计(同比)                                       
+ NETINVCASHFLOW_YOY              投资活动产生的现金流量净额(同比)                                    
+ ACCEPTINVREC_YOY                吸收投资收到的现金(同比)                                        
+ SUBSIDIARYACCEPT_YOY            子公司吸收少数股东投资收到的现金(同比)                                 
+ LOANREC_YOY                     取得借款收到的现金(同比)                                        
+ ISSUEBONDREC_YOY                发行债券收到的现金(同比)                                        
+ OTHERFINAREC_YOY                收到其他与筹资活动有关的现金(同比)                                   
+ SUMFINAFLOWIN_YOY               筹资活动现金流入小计(同比)                                       
+ REPAYDEBTPAY_YOY                偿还债务支付的现金(同比)                                        
+ DIVIPROFITORINTPAY_YOY          分配股利、利润或偿付利息支付的现金(同比)                                
+ SUBSIDIARYPAY_YOY               子公司支付给少数股东的股利、利润(同比)                                 
+ BUYSUBSIDIARYPAY_YOY            购买子公司少数股权而支付的现金(同比)                                  
+ OTHERFINAPAY_YOY                支付其他与筹资活动有关的现金(同比)                                   
+ SUBSIDIARYREDUCTCAPITAL_YOY     子公司减资支付给少数股东的现金(同比)                                  
+ SUMFINAFLOWOUT_YOY              筹资活动现金流出小计(同比)                                       
+ NETFINACASHFLOW_YOY             筹资活动产生的现金流量净额(同比)                                    
+ EFFECTEXCHANGERATE_YOY          汇率变动对现金及现金等价物的影响(同比)                                 
+ NICASHEQUI_YOY                  现金及现金等价物净增加额(同比)                                     
+ CASHEQUIBEGINNING_YOY           加:期初现金及现金等价物余额(同比)                                   
+ CASHEQUIENDING_YOY              期末现金及现金等价物余额(同比) 
+ 
+ DATATYPE									      数据类型（0--按报告期；1--按年度;2--按单季度）                                                         
+ SECURITYCODE                                                                    
+ REPORTTYPE                                                                      
+ TYPE                                                                            
+ REPORTDATE                      报告时间                                            
+ CURRENCY                                                                        
+                                                                                 

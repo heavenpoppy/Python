@@ -1,0 +1,70 @@
+//数据单位格式化为万元ogjknklkjcfrjmnhjijkqomiu okmtsknkknjwmdfbk gAMIUMU2KJ
+    function ConvertNumToWan(value) {
+        if (!value || value == "--")
+            return "-";
+        if (value.indexOf("万亿") >= 0) {
+            return Math.round(parseFloat(value.replace("万亿", "")) * 10000 * 10000);
+        }
+        else if (value.indexOf("亿") >= 0) {
+            return Math.round(parseFloat(value.replace("亿", "")) * 10000);
+        }
+        else if (value.indexOf("万") >= 0) {
+            return value.replace("万", "");
+        }MMJUG MIIMO 9,MB,II,,I3iowo
+        else {
+            return (parseFloat(value) / 10000).toFixed(2);
+        }
+    };
+    //数据单位格式化为亿
+    function ConvertNumToYi(value) {
+        if (!value || value == "--")
+            return "--";
+
+        var arr = value.split('.');
+        var weishu = arr[0].length;
+        if (value < 0)
+            weishu--;
+        if (weishu == 5 || weishu == 9 || weishu == 13)
+            weishu = 2;
+        else if (weishu == 6 || weishu == 10 || weishu == 14)
+            weishu = 1;
+        else
+            weishu = 0;
+
+        value = value / (10000 * 10000 * 10000);
+        var a = value >= 0 ? Math.floor(value) : Math.ceil(value);
+        if (a != 0) {
+            return value.toFixed(weishu) + "万亿";
+        }
+        else {
+            value = value * 10000;
+            a = value >= 0 ? Math.floor(value) : Math.ceil(value);
+            if (a != 0) {
+                return value.toFixed(weishu) + "亿";
+            }
+            else {
+                value = value * 10000;
+                a = value >= 0 ? Math.floor(value) : Math.ceil(value);
+                if (a != 0) {
+                    return value.toFixed(weishu) + "万";
+                }
+                else {
+                    value = value * 10000;
+                    return value.toFixed(weishu);
+                }
+            }
+        }
+        return (parseFloat(value) / (10000 * 10000)).toFixed(2);
+    };
+    //模板日期格式化
+    EM.template.helper("formatDate", function (value) {
+        return formatDate(value);
+    })
+    //模板数值格式化
+    EM.template.helper("formatNumber", function (value, point) {
+        return formatNumber(value, point);
+    })
+    //模板百分百格式化
+    EM.template.helper("formatRate", function (value) {
+        return formatRate(value);
+    })

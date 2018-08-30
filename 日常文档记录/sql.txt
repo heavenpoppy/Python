@@ -1,0 +1,16 @@
+select count(stockcode),datatype,stockcode from lrb  group by stockcode,datatype;
+
+select * from codelist where stockcode='sz000618';
+
+select count(*) from lrb;
+
+select count(stockcode),datatype,stockcode from lrb where stockcode = 'sz000618'
+ group by stockcode,datatype;
+
+
+delete from lrb where stockcode = 'sz000618'
+
+select count(distinct(stockcode)) from lrb where datatype='0'
+
+select * from lrb where stockcode ='sz000618'
+
